@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="(주)비에이텍의 간편 온라인 견적 및 설치/수리 상담 문의 폼을 이용해 보시고, 최신 제품 카탈로그(PDF) 및 펌프 기술 매뉴얼 자료를 다운로드하세요.">
+  <title>고객지원 - (주)비에이텍</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- --- Header / Navigation --- -->
+  <header class="header" id="main-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo" id="header-logo">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="45" stroke-dasharray="15 5" />
+          <circle cx="50" cy="50" r="28" stroke-dasharray="5 2" />
+          <path d="M50,15 L50,35 M50,65 L50,85 M15,50 L35,50 M65,50 L85,50" />
+          <circle cx="50" cy="50" r="10" fill="currentColor" />
+        </svg>
+        <span>(주)비에이텍</span>
+      </a>
+      
+      <nav class="nav-menu" id="header-nav-menu">
+        <div class="nav-item"><a href="index.html" class="nav-link" id="nav-home">홈</a></div>
+        <div class="nav-item"><a href="company.html" class="nav-link" id="nav-company">회사소개</a></div>
+        <div class="nav-item"><a href="products.html" class="nav-link" id="nav-products">제품안내</a></div>
+        <div class="nav-item"><a href="technology.html" class="nav-link" id="nav-tech">기술 및 인증</a></div>
+        <div class="nav-item"><a href="performance.html" class="nav-link" id="nav-perf">사업실적</a></div>
+        <div class="nav-item"><a href="campaign.html" class="nav-link" id="nav-campaign">캠페인</a></div>
+        <div class="nav-item active"><a href="support.html" class="nav-link" id="nav-support">고객지원</a></div>
+        <a href="support.html#inquiry-form-section" class="nav-cta" id="nav-cta-btn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          온라인 견적 문의
+        </a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="메뉴 열기/닫기" id="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- --- Page Cover --- -->
+  <section class="section" style="padding: 140px 0 60px; background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%); color: var(--text-light); text-align: center;">
+    <div class="container">
+      <h1 style="font-size: 2.8rem; font-weight: 800; margin-bottom: 12px;">고객지원</h1>
+      <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.15rem; max-width: 600px; margin: 0 auto;">빠르고 정확한 상담을 위한 온라인 견적 접수와 기술 보수 관련 카탈로그 보관 자료실입니다.</p>
+    </div>
+  </section>
+
+  <!-- --- Contact & Form Section --- -->
+  <section class="section section-white" id="inquiry-form-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Online Inquiry</span>
+        <h2 class="section-title" id="support-title">간편 온라인 문의 및 견적 신청</h2>
+        <p class="section-desc">필요하신 펌프의 용도, 수량 및 현장 개보수 사양을 기재하여 문의 주시면 담당 기술 엔지니어가 신속하게 분석 검토 후 상담 전화를 드리겠습니다.</p>
+      </div>
+
+      <div class="support-grid">
+        
+        <!-- Support Info Left -->
+        <div class="support-info-cards" id="support-contacts">
+          
+          <!-- Card 1: Tel -->
+          <div class="support-contact-card" id="contact-tel">
+            <div class="support-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="support-card-details">
+              <h4>신속한 기술 전화 상담</h4>
+              <p>대량 납품 조달 및 대형 펌프 정밀 해체 복구 문의 등 긴급 사안은 실시간 전문 전화를 주시면 가장 빠른 접수가 가능합니다.</p>
+              <a href="tel:033-252-0000" class="support-card-btn">033-252-0000 (연결하기) <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+            </div>
+          </div>
+
+          <!-- Card 2: FAX -->
+          <div class="support-contact-card" id="contact-fax">
+            <div class="support-card-icon">
+              <svg viewBox="0 0 24 24"><polyline points="4 7 4 4 20 4 20 7"/><rect x="2" y="7" width="20" height="10" rx="2" ry="2"/><path d="M5 17h14v4H5z"/></svg>
+            </div>
+            <div class="support-card-details">
+              <h4>팩스 접수 도면 수신</h4>
+              <p>공사 시방서, 기술 도면 및 공공 조달 도수 설계도 등의 문서는 팩스로 접수해 주시면 누락 없이 전문 검토팀에 매칭됩니다.</p>
+              <span class="support-card-btn" style="cursor: default; color: var(--primary-color);">FAX: 033-252-0001</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Mail -->
+          <div class="support-contact-card" id="contact-email">
+            <div class="support-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="support-card-details">
+              <h4>이메일 기술 제안서 신청</h4>
+              <p>기업 및 지자체 제안 참여 요청(RFP) 문서 및 공공 조달 설계 기초금액 산출 요청서는 이메일로 상시 접수하고 있습니다.</p>
+              <a href="mailto:contact@batechpump.co.kr" class="support-card-btn">contact@batechpump.co.kr <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Inquiry Form Right -->
+        <div class="inquiry-form-box" id="inquiry-box-container">
+          <form id="inquiry-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="client-name" class="form-label">회사명 / 성함 <span style="color: #e74c3c;">*</span></label>
+                <input type="text" class="form-input" id="client-name" name="name" placeholder="예: 비에이텍 / 홍길동" required>
+              </div>
+              <div class="form-group">
+                <label for="client-phone" class="form-label">연락처 <span style="color: #e74c3c;">*</span></label>
+                <input type="tel" class="form-input" id="client-phone" name="phone" placeholder="예: 010-1234-5678" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="client-email" class="form-label">이메일 주소 <span style="color: #e74c3c;">*</span></label>
+              <input type="email" class="form-input" id="client-email" name="email" placeholder="예: example@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="inquiry-type" class="form-label">문의 구분 <span style="color: #e74c3c;">*</span></label>
+              <select class="form-input" id="inquiry-type" name="type" aria-label="문의 구분 선택" style="cursor: pointer;">
+                <option value="quote">신규 펌프 견적 의뢰</option>
+                <option value="installation">펌프 가압장 시공 / 배관 설비</option>
+                <option value="repair">해체 수리 / 진동 복원 / 밸브 보수</option>
+                <option value="catalog">카탈로그 / 도면 요청</option>
+                <option value="other">기타 문의</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="client-content" class="form-label">상세 문의 내용 <span style="color: #e74c3c;">*</span></label>
+              <textarea class="form-input" id="client-content" name="content" placeholder="원하시는 펌프 제품명, 구경, 양정, 설치 지역 등의 세부 스펙 혹은 정비보수가 필요한 펌프장 현장의 상세 상태를 기입해 주시면 더욱 신속한 견적이 가능합니다." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-checkbox" id="privacy-consent">
+                <input type="checkbox" id="privacy-check" name="privacy" required>
+                <span class="form-checkbox-label">
+                  (필수) 비에이텍의 <a href="#">개인정보 수집 및 이용 조항</a>에 동의합니다.
+                </span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 18px;" id="submit-inquiry-btn">
+              온라인 문의 신청서 전송
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Catalog Archives 자료실 Section --- -->
+  <section class="section section-light" id="downloads-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Catalog Library</span>
+        <h2 class="section-title" id="library-title">제품 정보 및 매뉴얼 자료실</h2>
+        <p class="section-desc">비에이텍 펌프의 세부 단면 치수, 펌프 조립도 및 사양 곡선이 포함된 PDF 고해상도 설명 책자를 바로 다운로드받을 수 있습니다.</p>
+      </div>
+
+      <div class="downloads-grid" id="showroom-downloads-grid">
+        
+        <!-- Catalog 1 -->
+        <div class="download-card" id="down-catalog">
+          <div class="download-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div class="download-details">
+            <h4 class="download-title">(주)비에이텍 종합 카탈로그 (2026)</h4>
+            <div class="download-meta">PDF 규격 | 한글판 | 45.2 MB | 2026년 최신 개정본</div>
+          </div>
+          <a href="#" class="download-btn" aria-label="종합 카탈로그 다운로드" download><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+        </div>
+
+        <!-- Catalog 2 -->
+        <div class="download-card" id="down-manual">
+          <div class="download-icon">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="download-details">
+            <h4 class="download-title">원심 벌류트 펌프 유지보수 기술 매뉴얼</h4>
+            <div class="download-meta">PDF 규격 | 한글판 | 12.8 MB | 임펠러 정밀 분해 세정 기술</div>
+          </div>
+          <a href="#" class="download-btn" aria-label="기술 매뉴얼 다운로드" download><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Form Submission Success Modal --- -->
+  <div class="success-modal" id="success-modal" aria-hidden="true" role="dialog" aria-labelledby="success-popup-title">
+    <div class="success-card">
+      <div class="success-icon-box">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3 class="success-card-title" id="success-popup-title" style="font-size: 1.5rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 12px;">문의가 완료되었습니다!</h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 28px;">
+        (주)비에이텍 온라인 견적 및 시공 상담 신청이 정상적으로 접수되었습니다. 당사의 담당 수처리 기술 엔지니어가 작성하신 이메일과 유선 번호로 24시간 이내에 직접 연락을 드리겠습니다.
+      </p>
+      <button class="btn btn-primary" style="width: 100%; padding: 14px;" id="success-close-btn">확인 및 창 닫기</button>
+    </div>
+  </div>
+
+  <!-- --- Footer --- -->
+  <footer class="footer" id="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: About B-Tech -->
+        <div class="footer-info-col" id="footer-about">
+          <h3>
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="45" stroke-dasharray="10 5" />
+              <path d="M50,15 L50,85 M15,50 L85,50" />
+            </svg>
+            (주)비에이텍
+          </h3>
+          <p>
+            (주)비에이텍은 다년간 축적된 숙련된 엔지니어링 기술력과 엄격한 ISO 품질경영 매뉴얼을 바탕으로 최상급 워터 펌프 제작, 설치, 수리 정비를 담당하는 공공 조달 강소기업입니다.
+          </p>
+          <div class="footer-socials" id="footer-social-links">
+            <a href="#" class="footer-social-btn" aria-label="블로그"><svg viewBox="0 0 24 24"><path d="M2 12a10 10 0 1 1 10 10A10 10 0 0 1 2 12zm10-5v10m-5-5h10"/></svg></a>
+            <a href="#" class="footer-social-btn" aria-label="유튜브"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="footer-links-col" id="footer-sitemap">
+          <h4>사이트맵</h4>
+          <ul class="footer-links-list">
+            <li><a href="company.html"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg>회사소개</a></li>
+            <li><a href="products.html"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg>제품안내</a></li>
+            <li><a href="technology.html"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg>기술 및 인증</a></li>
+            <li><a href="performance.html"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg>사업실적</a></li>
+            <li><a href="campaign.html"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg>캠페인</a></li>
+            <li><a href="support.html"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg>고객지원</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact Info -->
+        <div class="footer-contact-col" id="footer-contact-details">
+          <h4>고객센터 및 오시는 길</h4>
+          <div class="footer-contact-details">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>강원특별자치도 춘천시 퇴계공단길 55 (퇴계공단 내 비에이텍)</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>대표전화: 033-252-0000 | 팩스: 033-252-0001</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>이메일: contact@batechpump.co.kr</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>상담 가능 시간: 평일 09:00 ~ 18:00 (토/일, 공휴일 휴무)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom" id="footer-base">
+        <div>&copy; 2026 (주)비에이텍. All Rights Reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="#">개인정보처리방침</a>
+          <a href="#">이용약관</a>
+          <a href="company.html#location-section">오시는 길</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="(주)비에이텍의 고압 다단/단단/양흡입 벌류트 펌프 라인업과 정량, 수중, 오수/슬러지, 부스터 등 다양한 특수/산업용 펌프의 설계 도면과 기술 사양을 확인하세요.">
+  <title>제품안내 - (주)비에이텍</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- --- Header / Navigation --- -->
+  <header class="header" id="main-header">
+    <div class="nav-container">
+      <a href="index.html" class="logo" id="header-logo">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="45" stroke-dasharray="15 5" />
+          <circle cx="50" cy="50" r="28" stroke-dasharray="5 2" />
+          <path d="M50,15 L50,35 M50,65 L50,85 M15,50 L35,50 M65,50 L85,50" />
+          <circle cx="50" cy="50" r="10" fill="currentColor" />
+        </svg>
+        <span>(주)비에이텍</span>
+      </a>
+      
+      <nav class="nav-menu" id="header-nav-menu">
+        <div class="nav-item"><a href="index.html" class="nav-link" id="nav-home">홈</a></div>
+        <div class="nav-item"><a href="company.html" class="nav-link" id="nav-company">회사소개</a></div>
+        <div class="nav-item active"><a href="products.html" class="nav-link" id="nav-products">제품안내</a></div>
+        <div class="nav-item"><a href="technology.html" class="nav-link" id="nav-tech">기술 및 인증</a></div>
+        <div class="nav-item"><a href="performance.html" class="nav-link" id="nav-perf">사업실적</a></div>
+        <div class="nav-item"><a href="campaign.html" class="nav-link" id="nav-campaign">캠페인</a></div>
+        <div class="nav-item"><a href="support.html" class="nav-link" id="nav-support">고객지원</a></div>
+        <a href="support.html#inquiry-form-section" class="nav-cta" id="nav-cta-btn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          온라인 견적 문의
+        </a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="메뉴 열기/닫기" id="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- --- Page Cover --- -->
+  <section class="section" style="padding: 140px 0 60px; background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%); color: var(--text-light); text-align: center;">
+    <div class="container">
+      <h1 style="font-size: 2.8rem; font-weight: 800; margin-bottom: 12px;">제품안내</h1>
+      <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.15rem; max-width: 600px; margin: 0 auto;">정밀 공학 기법을 기반으로 자체 제조하여 고압 수송과 극한 상황에서도 안정성을 발휘하는 B-Tech의 제품군입니다.</p>
+    </div>
+  </section>
+
+  <!-- --- Products Showroom --- -->
+  <section class="section section-white" id="products-showroom">
+    <div class="container">
+      
+      <!-- Category Tabs Nav -->
+      <div class="products-nav" id="products-category-tabs">
+        <button class="prod-tab-btn active" data-tab="all">전체 제품군</button>
+        <button class="prod-tab-btn" data-tab="volute">벌류트 펌프</button>
+        <button class="prod-tab-btn" data-tab="special">특수 및 산업용 펌프</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="showroom-grid">
+        
+        <!-- Product 1: Multistage Volute -->
+        <div class="product-card" data-category="volute" id="prod-multistage">
+          <div class="product-img-box">
+            <!-- Dynamic Technical Vector Drawing of Multi-Stage Casing Pump -->
+            <svg class="product-svg-diag" viewBox="0 0 200 150" aria-label="다단 벌류트 펌프 기술 도면">
+              <rect x="20" y="45" width="160" height="60" rx="6" fill="#3C6382" stroke="var(--primary-color)" stroke-width="2" />
+              <!-- Impeller chambers representing stages -->
+              <line x1="60" y1="45" x2="60" y2="105" stroke="var(--primary-dark)" stroke-width="3" />
+              <line x1="100" y1="45" x2="100" y2="105" stroke="var(--primary-dark)" stroke-width="3" />
+              <line x1="140" y1="45" x2="140" y2="105" stroke="var(--primary-dark)" stroke-width="3" />
+              <!-- Shaft -->
+              <line x1="5" y1="75" x2="195" y2="75" stroke="#00D2D3" stroke-width="4" stroke-linecap="round" />
+              <!-- Suction/Discharge Flanges -->
+              <path d="M40,45 L40,20 L55,20 L55,45 Z" fill="#0A3D62" />
+              <path d="M145,45 L145,20 L160,20 L160,45 Z" fill="#0A3D62" />
+              <!-- Center Bolt details -->
+              <circle cx="80" cy="75" r="4" fill="var(--accent-color)" />
+              <circle cx="120" cy="75" r="4" fill="var(--accent-color)" />
+              <!-- Flow indicators -->
+              <path d="M15,25 Q48,25 48,15" fill="none" stroke="var(--accent-color)" stroke-width="2" stroke-dasharray="4 2" />
+              <text x="100" y="130" font-family="'Outfit'" font-size="10" fill="var(--text-muted)" text-anchor="middle">MULTI-STAGE CHAMBER SECTION</text>
+            </svg>
+            <div class="product-badge">Volute</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">고압 다단 벌류트 펌프</h3>
+            <p class="product-desc">동일 축상에 여러 개의 임펠러를 직렬로 배치하여 강력한 고압 송출이 가능하도록 설계된 펌프입니다. 지자체 고지대 상수도 가압장, 대형 플랜트 보일러 급수용 및 산업 소방 설비에 최적화되어 있습니다.</p>
+            <table class="product-spec-table">
+              <tbody>
+                <tr><th>최대 토출량</th><td>240 m³/h</td></tr>
+                <tr><th>최고 양정</th><td>350 m</td></tr>
+                <tr><th>구경 범위</th><td>40 mm ~ 150 mm</td></tr>
+                <tr><th>모터 전력</th><td>최대 220 kW</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Product 2: Single-stage Volute -->
+        <div class="product-card" data-category="volute" id="prod-singlestage">
+          <div class="product-img-box">
+            <!-- Dynamic Technical Vector Drawing of Single Stage Volute -->
+            <svg class="product-svg-diag" viewBox="0 0 200 150" aria-label="단단 편흡입 벌류트 펌프 기술 도면">
+              <!-- Scroll Casing outer outline -->
+              <path d="M100,20 A55,55 0 1,1 50,60 L20,60 L20,90 L60,90 A55,55 0 0,1 100,20 Z" fill="#3C6382" stroke="var(--primary-color)" stroke-width="2" />
+              <!-- Volute scroll contour -->
+              <circle cx="100" cy="75" r="35" fill="none" stroke="var(--primary-dark)" stroke-width="4" />
+              <path d="M100,75 L145,20 M145,20 L160,35" fill="none" stroke="var(--accent-color)" stroke-width="3" />
+              <!-- Impeller in center -->
+              <circle cx="100" cy="75" r="14" fill="#00D2D3" />
+              <line x1="100" y1="75" x2="190" y2="75" stroke="#2C3E50" stroke-width="4" />
+              <text x="100" y="130" font-family="'Outfit'" font-size="10" fill="var(--text-muted)" text-anchor="middle">VOLUTE SCROLL SECTION</text>
+            </svg>
+            <div class="product-badge">Volute</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">단단 편흡입 벌류트 펌프</h3>
+            <p class="product-desc">단일 임펠러와 정밀 스파이럴 와류형 케이싱 구조를 취하여 막힘없는 고효율 유체 수송을 구현한 베이직 펌프입니다. 구조가 간단하여 정비성이 뛰어나며 농업 관수용, 건물 급배수 및 냉난방 순환 등 다목적 활용이 가능합니다.</p>
+            <table class="product-spec-table">
+              <tbody>
+                <tr><th>최대 토출량</th><td>600 m³/h</td></tr>
+                <tr><th>최고 양정</th><td>90 m</td></tr>
+                <tr><th>구경 범위</th><td>32 mm ~ 250 mm</td></tr>
+                <tr><th>모터 전력</th><td>최대 90 kW</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Product 3: Double Suction Volute -->
+        <div class="product-card" data-category="volute" id="prod-doublesuction">
+          <div class="product-img-box">
+            <!-- Technical SVG Drawing of Double Suction casing -->
+            <svg class="product-svg-diag" viewBox="0 0 200 150" aria-label="양흡입 벌류트 펌프 기술 도면">
+              <rect x="50" y="30" width="100" height="90" rx="12" fill="#3C6382" stroke="var(--primary-color)" stroke-width="2" />
+              <!-- Symmetrical Dual Suction ears -->
+              <path d="M50,55 C30,55 30,95 50,95" fill="none" stroke="var(--primary-dark)" stroke-width="6" />
+              <path d="M150,55 C170,55 170,95 150,95" fill="none" stroke="var(--primary-dark)" stroke-width="6" />
+              <!-- Shaft -->
+              <line x1="10" y1="75" x2="190" y2="75" stroke="#00D2D3" stroke-width="4" />
+              <!-- Impeller in core -->
+              <circle cx="100" cy="75" r="24" fill="#0A3D62" />
+              <path d="M100,51 L100,99" stroke="#ffffff" stroke-width="2" />
+              <text x="100" y="140" font-family="'Outfit'" font-size="10" fill="var(--text-muted)" text-anchor="middle">DUAL-FLOW BALANCED CASING</text>
+            </svg>
+            <div class="product-badge">Volute</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">양흡입 벌류트 펌프</h3>
+            <p class="product-desc">샤프트를 중심으로 유체가 양쪽에서 동시에 대칭으로 유입되게 구성하여 축 추력(Axial Thrust)을 완전히 해소한 밸런스드 대형 펌프입니다. 배수장, 취수장 및 광역 상수원 취송수 등 대유량 수송에 최고의 안정성을 발휘합니다.</p>
+            <table class="product-spec-table">
+              <tbody>
+                <tr><th>최대 토출량</th><td>2,400 m³/h</td></tr>
+                <tr><th>최고 양정</th><td>140 m</td></tr>
+                <tr><th>구경 범위</th><td>150 mm ~ 500 mm</td></tr>
+                <tr><th>모터 전력</th><td>최대 450 kW</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Product 4: Submersible Sewage -->
+        <div class="product-card" data-category="special" id="prod-submersible">
+          <div class="product-img-box">
+            <!-- Technical SVG Drawing of Submersible Pump -->
+            <svg class="product-svg-diag" viewBox="0 0 200 150" aria-label="수중 오수/슬러지 펌프 기술 도면">
+              <rect x="70" y="20" width="60" height="90" rx="10" fill="#2C3E50" stroke="var(--primary-color)" stroke-width="2" />
+              <!-- Bottom Strainer suction grid -->
+              <rect x="65" y="110" width="70" height="20" rx="3" fill="#7F8C8D" />
+              <line x1="75" y1="115" x2="75" y2="125" stroke="#ffffff" stroke-width="2" />
+              <line x1="85" y1="115" x2="85" y2="125" stroke="#ffffff" stroke-width="2" />
+              <line x1="95" y1="115" x2="95" y2="125" stroke="#ffffff" stroke-width="2" />
+              <line x1="105" y1="115" x2="105" y2="125" stroke="#ffffff" stroke-width="2" />
+              <line x1="115" y1="115" x2="115" y2="125" stroke="#ffffff" stroke-width="2" />
+              <line x1="125" y1="115" x2="125" y2="125" stroke="#ffffff" stroke-width="2" />
+              <!-- Power Cable -->
+              <path d="M100,20 Q80,5 50,15" fill="none" stroke="var(--accent-color)" stroke-width="3" />
+              <!-- Vortex Impeller -->
+              <circle cx="100" cy="90" r="15" fill="#00D2D3" />
+              <text x="100" y="145" font-family="'Outfit'" font-size="9" fill="var(--text-muted)" text-anchor="middle">SUBMERSIBLE INTEGRAL MOTOR</text>
+            </svg>
+            <div class="product-badge">Special & Industrial</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">수중 오수 / 슬러지 펌프</h3>
+            <p class="product-desc">완전 방수 밀폐형 모터 구조를 취하여 수중에 완전히 침전시켜 작동하는 논클로그(Non-Clog) 형 펌프입니다. 케이싱 내 유입되는 섬유질이나 슬러지를 자동 컷팅/패스시키는 특화 임펠러가 내장되어 있어 하수 처리장, 우수 중계 가압장에 필수 배포됩니다.</p>
+            <table class="product-spec-table">
+              <tbody>
+                <tr><th>최대 토출량</th><td>480 m³/h</td></tr>
+                <tr><th>최고 양정</th><td>45 m</td></tr>
+                <tr><th>구경 범위</th><td>50 mm ~ 200 mm</td></tr>
+                <tr><th>절연 등급</th><td>Class F (IP68 완전방수)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Product 5: Dosing Pump -->
+        <div class="product-card" data-category="special" id="prod-dosing">
+          <div class="product-img-box">
+            <!-- Technical SVG of Dosing pump -->
+            <svg class="product-svg-diag" viewBox="0 0 200 150" aria-label="정량 펌프 기술 도면">
+              <rect x="30" y="40" width="80" height="70" rx="8" fill="#3C6382" />
+              <!-- Piston diaphragm head -->
+              <rect x="110" y="50" width="30" height="50" rx="4" fill="var(--primary-color)" />
+              <line x1="110" y1="75" x2="80" y2="75" stroke="#00D2D3" stroke-width="4" />
+              <!-- Valves check -->
+              <path d="M125,50 L125,25" stroke="var(--accent-color)" stroke-width="3" />
+              <path d="M125,100 L125,125" stroke="var(--accent-color)" stroke-width="3" />
+              <!-- Control knob -->
+              <circle cx="45" cy="75" r="10" fill="#2C3E50" stroke="#ffffff" stroke-width="1.5" />
+              <line x1="45" y1="75" x2="45" y2="65" stroke="var(--accent-color)" stroke-width="2" />
+              <text x="100" y="135" font-family="'Outfit'" font-size="10" fill="var(--text-muted)" text-anchor="middle">STROKE DIAPHRAGM FEED</text>
+            </svg>
+            <div class="product-badge">Special & Industrial</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">정밀 다이아프램 정량 펌프</h3>
+            <p class="product-desc">스트로크 제어 시스템을 이용해 시간당 약액이나 케미컬 주입량을 일정하게 토출하는 왕복동 정량 펌프입니다. 상하수도 약품 투입 설비, 화학 공장 정밀 공정 배출 등 고신뢰성의 약품 희석 시스템에 필수 배치됩니다.</p>
+            <table class="product-spec-table">
+              <tbody>
+                <tr><th>최대 토출량</th><td>최대 1,800 L/h</td></tr>
+                <tr><th>최고 압력</th><td>20 bar</td></tr>
+                <tr><th>조절 정밀도</th><td>&plusmn; 1% 오차 이내</td></tr>
+                <tr><th>헤드 재질</th><td>Teflon, PVC, SUS316</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Product 6: Booster Pump -->
+        <div class="product-card" data-category="special" id="prod-booster">
+          <div class="product-img-box">
+            <!-- Technical SVG of Booster Pump System -->
+            <svg class="product-svg-diag" viewBox="0 0 200 150" aria-label="지능형 부스터 펌프 시스템 기술 도면">
+              <!-- Common Baseplate -->
+              <rect x="20" y="115" width="160" height="15" rx="3" fill="#7F8C8D" />
+              <!-- Vertical Pumps 1 & 2 -->
+              <rect x="50" y="45" width="24" height="70" fill="#3C6382" />
+              <rect x="120" y="45" width="24" height="70" fill="#3C6382" />
+              <!-- Vertical motors on top -->
+              <rect x="47" y="25" width="30" height="20" rx="2" fill="var(--primary-color)" />
+              <rect x="117" y="25" width="30" height="20" rx="2" fill="var(--primary-color)" />
+              <!-- Header pipes -->
+              <line x1="15" y1="85" x2="185" y2="85" stroke="#00D2D3" stroke-width="5" />
+              <circle cx="62" cy="85" r="4" fill="#ffffff" />
+              <circle cx="132" cy="85" r="4" fill="#ffffff" />
+              <text x="100" y="145" font-family="'Outfit'" font-size="10" fill="var(--text-muted)" text-anchor="middle">PARALLEL VARIABLE INVERTER SYSTEM</text>
+            </svg>
+            <div class="product-badge">Special & Industrial</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">지능형 부스터 펌프 시스템</h3>
+            <p class="product-desc">개별 유량 요구량 변화를 감지하여 2~4대의 버티컬 인버터 펌프를 병렬 무단 가속 연동 구동시키는 최고급 절전 가압 펌프 스테이션입니다. 대형 아파트 단지, 고지대 주택가 가압장 및 상업 빌딩 공영 급수용으로 최고 등급 인버터를 탑재했습니다.</p>
+            <table class="product-spec-table">
+              <tbody>
+                <tr><th>인버터 제어</th><td>개별 인버터 제어 (PID 탑재)</td></tr>
+                <tr><th>최대 토출량</th><td>최대 300 m³/h (시스템 기준)</td></tr>
+                <tr><th>최고 압력</th><td>25 bar</td></tr>
+                <tr><th>보호 등급</th><td>과전류, 공회전 차단 등 풀센서 탑재</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Footer --- -->
+  <footer class="footer" id="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: About B-Tech -->
+        <div class="footer-info-col" id="footer-about">
+          <h3>
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="45" stroke-dasharray="10 5" />
+              <path d="M50,15 L50,85 M15,50 L85,50" />
+            </svg>
+            (주)비에이텍
+          </h3>
+          <p>
+            (주)비에이텍은 다년간 축적된 숙련된 엔지니어링 기술력과 엄격한 ISO 품질경영 매뉴얼을 바탕으로 최상급 워터 펌프 제작, 설치, 수리 정비를 담당하는 공공 조달 강소기업입니다.
+          </p>
+          <div class="footer-socials" id="footer-social-links">
+            <a href="#" class="footer-social-btn" aria-label="블로그"><svg viewBox="0 0 24 24"><path d="M2 12a10 10 0 1 1 10 10A10 10 0 0 1 2 12zm10-5v10m-5-5h10"/></svg></a>
+            <a href="#" class="footer-social-btn" aria-label="유튜브"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="footer-links-col" id="footer-sitemap">
+          <h4>사이트맵</h4>
+          <ul class="footer-links-list">
+            <li><a href="company.html"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg>회사소개</a></li>
+            <li><a href="products.html"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg>제품안내</a></li>
+            <li><a href="technology.html"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg>기술 및 인증</a></li>
+            <li><a href="performance.html"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg>사업실적</a></li>
+            <li><a href="campaign.html"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg>캠페인</a></li>
+            <li><a href="support.html"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><polyline points="9 18 15 12 9 6"/></svg>고객지원</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact Info -->
+        <div class="footer-contact-col" id="footer-contact-details">
+          <h4>고객센터 및 오시는 길</h4>
+          <div class="footer-contact-details">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>강원특별자치도 춘천시 퇴계공단길 55 (퇴계공단 내 비에이텍)</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>대표전화: 033-252-0000 | 팩스: 033-252-0001</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>이메일: contact@batechpump.co.kr</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>상담 가능 시간: 평일 09:00 ~ 18:00 (토/일, 공휴일 휴무)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom" id="footer-base">
+        <div>&copy; 2026 (주)비에이텍. All Rights Reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="#">개인정보처리방침</a>
+          <a href="#">이용약관</a>
+          <a href="company.html#location-section">오시는 길</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
