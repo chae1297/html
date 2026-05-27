@@ -103,11 +103,16 @@ document.addEventListener('DOMContentLoaded', () => {
   if (certCards.length > 0 && modal) {
     certCards.forEach(card => {
       card.addEventListener('click', () => {
-        const svgContent = card.querySelector('.cert-svg-placeholder').outerHTML;
+        const pdfFile = card.getAttribute('data-pdf');
         const title = card.querySelector('.cert-title').textContent;
         const desc = card.querySelector('.cert-desc').textContent;
 
-        modalImgBox.innerHTML = svgContent;
+        if (pdfFile) {
+          modalImgBox.innerHTML = `<iframe src="${pdfFile}" width="100%" height="550px" style="border: none; border-radius: 8px; background-color: #fff;"></iframe>`;
+        } else {
+          const svgContent = card.querySelector('.cert-svg-placeholder').outerHTML;
+          modalImgBox.innerHTML = svgContent;
+        }
         modalTitle.textContent = title;
         modalDesc.textContent = desc;
         modal.style.display = 'flex';
@@ -318,3 +323,4 @@ document.addEventListener('DOMContentLoaded', () => {
     updateWaterTracker();
   }
 });
+커밋
