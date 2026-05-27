@@ -318,6 +318,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- FAQ Accordion Logic ---
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  if (faqQuestions.length > 0) {
+    faqQuestions.forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const isActive = item.classList.contains('active');
+        
+        // Close all items
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        
+        // If it wasn't active, open it
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+  }
+
+  // --- FAQ Filtering Logic ---
+  const faqTabButtons = document.querySelectorAll('.faq-tab-btn');
+  const faqItems = document.querySelectorAll('.faq-item');
+  if (faqTabButtons.length > 0 && faqItems.length > 0) {
+    faqTabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        faqTabButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.getAttribute('data-faq-cat');
+
+        faqItems.forEach(item => {
+          if (cat === 'all') {
+            item.style.display = 'block';
+          } else if (item.getAttribute('data-faq-category') === cat) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
   // Initialize water tracker on load if elements exist
   if (currentGlassesText) {
     updateWaterTracker();
