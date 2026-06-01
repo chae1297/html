@@ -364,5 +364,28 @@ document.addEventListener('DOMContentLoaded', () => {
   if (currentGlassesText) {
     updateWaterTracker();
   }
+
+  // --- Interactive Tabs for Product Operation Guide ---
+  const guideTabButtons = document.querySelectorAll('.guide-tab-btn');
+  const guidePanels = document.querySelectorAll('.guide-content-panel');
+  if (guideTabButtons.length > 0 && guidePanels.length > 0) {
+    guideTabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from buttons
+        guideTabButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const tabId = btn.getAttribute('data-guide-tab');
+        
+        // Switch panels with smooth fade-in
+        guidePanels.forEach(panel => {
+          if (panel.id === `guide-panel-${tabId}`) {
+            panel.classList.add('active');
+          } else {
+            panel.classList.remove('active');
+          }
+        });
+      });
+    });
+  }
 });
-커밋
