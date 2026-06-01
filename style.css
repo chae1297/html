@@ -2828,6 +2828,12 @@ textarea.form-input {
   .team-grid {
     grid-template-columns: 1fr;
   }
+}.product-title .spec-subtitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-left: 6px;
+  display: inline-block;
 }
 
 /* --- Product O&M Guide Styles --- */

@@ -56,8 +56,7 @@
   <!-- --- Products Showroom --- -->
   <section class="section section-white" id="products-showroom">
     <div class="container">
-      
-      <!-- Category Tabs Nav -->
+            <!-- Category Tabs Nav -->
       <div class="products-nav" id="products-category-tabs">
         <button class="prod-tab-btn active" data-tab="all">전체 제품군</button>
         <button class="prod-tab-btn" data-tab="volute">벌류트 펌프</button>
@@ -67,112 +66,46 @@
       <!-- Products Grid -->
       <div class="products-grid" id="showroom-grid">
         
-        <!-- Product 1: Multistage Volute -->
-        <div class="product-card" data-category="volute" id="prod-multistage">
+        <!-- Product 1: Booster Pump -->
+        <div class="product-card" data-category="special" id="prod-booster">
           <div class="product-img-box">
-            <!-- Dynamic Technical Vector Drawing of Multi-Stage Casing Pump -->
-            <svg class="product-svg-diag" viewBox="0 0 200 150" aria-label="다단 벌류트 펌프 기술 도면">
-              <rect x="20" y="45" width="160" height="60" rx="6" fill="#3C6382" stroke="var(--primary-color)" stroke-width="2" />
-              <!-- Impeller chambers representing stages -->
-              <line x1="60" y1="45" x2="60" y2="105" stroke="var(--primary-dark)" stroke-width="3" />
-              <line x1="100" y1="45" x2="100" y2="105" stroke="var(--primary-dark)" stroke-width="3" />
-              <line x1="140" y1="45" x2="140" y2="105" stroke="var(--primary-dark)" stroke-width="3" />
-              <!-- Shaft -->
-              <line x1="5" y1="75" x2="195" y2="75" stroke="#00D2D3" stroke-width="4" stroke-linecap="round" />
-              <!-- Suction/Discharge Flanges -->
-              <path d="M40,45 L40,20 L55,20 L55,45 Z" fill="#0A3D62" />
-              <path d="M145,45 L145,20 L160,20 L160,45 Z" fill="#0A3D62" />
-              <!-- Center Bolt details -->
-              <circle cx="80" cy="75" r="4" fill="var(--accent-color)" />
-              <circle cx="120" cy="75" r="4" fill="var(--accent-color)" />
-              <!-- Flow indicators -->
-              <path d="M15,25 Q48,25 48,15" fill="none" stroke="var(--accent-color)" stroke-width="2" stroke-dasharray="4 2" />
-              <text x="100" y="130" font-family="'Outfit'" font-size="10" fill="var(--text-muted)" text-anchor="middle">MULTI-STAGE CHAMBER SECTION</text>
+            <!-- Technical SVG of Booster Pump System -->
+            <svg class="product-svg-diag" viewBox="0 0 200 150" aria-label="부스터 펌프 기술 도면">
+              <!-- Common Baseplate -->
+              <rect x="20" y="115" width="160" height="15" rx="3" fill="#7F8C8D" />
+              <!-- Vertical Pumps 1 & 2 -->
+              <rect x="50" y="45" width="24" height="70" fill="#3C6382" />
+              <rect x="120" y="45" width="24" height="70" fill="#3C6382" />
+              <!-- Vertical motors on top -->
+              <rect x="47" y="25" width="30" height="20" rx="2" fill="var(--primary-color)" />
+              <rect x="117" y="25" width="30" height="20" rx="2" fill="var(--primary-color)" />
+              <!-- Header pipes -->
+              <line x1="15" y1="85" x2="185" y2="85" stroke="#00D2D3" stroke-width="5" />
+              <circle cx="62" cy="85" r="4" fill="#ffffff" />
+              <circle cx="132" cy="85" r="4" fill="#ffffff" />
+              <text x="100" y="145" font-family="'Outfit'" font-size="10" fill="var(--text-muted)" text-anchor="middle">PARALLEL VARIABLE INVERTER SYSTEM</text>
             </svg>
-            <div class="product-badge">Volute</div>
+            <div class="product-badge">Special & Industrial</div>
           </div>
           <div class="product-info">
-            <h3 class="product-title">고압 다단 벌류트 펌프</h3>
-            <p class="product-desc">동일 축상에 여러 개의 임펠러를 직렬로 배치하여 강력한 고압 송출이 가능하도록 설계된 펌프입니다. 지자체 고지대 상수도 가압장, 대형 플랜트 보일러 급수용 및 산업 소방 설비에 최적화되어 있습니다.</p>
+            <h3 class="product-title">부스터펌프 <span class="spec-subtitle">(상수도 가압펌프)</span></h3>
+            <p class="product-desc">개별 유량 요구량 변화를 감지하여 다수의 버티컬 인버터 펌프를 병렬 무단 가속 연동 구동시키는 최고급 절전 가압 펌프 시스템입니다. 대형 아파트 단지, 고지대 주택가 가압장 및 상업 빌딩 공영 급수용으로 최적화되었습니다.</p>
             <table class="product-spec-table">
               <tbody>
-                <tr><th>최대 토출량</th><td>240 m³/h</td></tr>
-                <tr><th>최고 양정</th><td>350 m</td></tr>
-                <tr><th>구경 범위</th><td>40 mm ~ 150 mm</td></tr>
-                <tr><th>모터 전력</th><td>최대 220 kW</td></tr>
+                <tr><th>인버터 제어</th><td>개별 인버터 제어 (PID 탑재)</td></tr>
+                <tr><th>최대 토출량</th><td>최대 300 m³/h (시스템 기준)</td></tr>
+                <tr><th>최고 압력</th><td>25 bar</td></tr>
+                <tr><th>보호 등급</th><td>과전류, 공회전 차단 등 풀센서 탑재</td></tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- Product 2: Single-stage Volute -->
-        <div class="product-card" data-category="volute" id="prod-singlestage">
-          <div class="product-img-box">
-            <!-- Dynamic Technical Vector Drawing of Single Stage Volute -->
-            <svg class="product-svg-diag" viewBox="0 0 200 150" aria-label="단단 편흡입 벌류트 펌프 기술 도면">
-              <!-- Scroll Casing outer outline -->
-              <path d="M100,20 A55,55 0 1,1 50,60 L20,60 L20,90 L60,90 A55,55 0 0,1 100,20 Z" fill="#3C6382" stroke="var(--primary-color)" stroke-width="2" />
-              <!-- Volute scroll contour -->
-              <circle cx="100" cy="75" r="35" fill="none" stroke="var(--primary-dark)" stroke-width="4" />
-              <path d="M100,75 L145,20 M145,20 L160,35" fill="none" stroke="var(--accent-color)" stroke-width="3" />
-              <!-- Impeller in center -->
-              <circle cx="100" cy="75" r="14" fill="#00D2D3" />
-              <line x1="100" y1="75" x2="190" y2="75" stroke="#2C3E50" stroke-width="4" />
-              <text x="100" y="130" font-family="'Outfit'" font-size="10" fill="var(--text-muted)" text-anchor="middle">VOLUTE SCROLL SECTION</text>
-            </svg>
-            <div class="product-badge">Volute</div>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">단단 편흡입 벌류트 펌프</h3>
-            <p class="product-desc">단일 임펠러와 정밀 스파이럴 와류형 케이싱 구조를 취하여 막힘없는 고효율 유체 수송을 구현한 베이직 펌프입니다. 구조가 간단하여 정비성이 뛰어나며 농업 관수용, 건물 급배수 및 냉난방 순환 등 다목적 활용이 가능합니다.</p>
-            <table class="product-spec-table">
-              <tbody>
-                <tr><th>최대 토출량</th><td>600 m³/h</td></tr>
-                <tr><th>최고 양정</th><td>90 m</td></tr>
-                <tr><th>구경 범위</th><td>32 mm ~ 250 mm</td></tr>
-                <tr><th>모터 전력</th><td>최대 90 kW</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Product 3: Double Suction Volute -->
-        <div class="product-card" data-category="volute" id="prod-doublesuction">
-          <div class="product-img-box">
-            <!-- Technical SVG Drawing of Double Suction casing -->
-            <svg class="product-svg-diag" viewBox="0 0 200 150" aria-label="양흡입 벌류트 펌프 기술 도면">
-              <rect x="50" y="30" width="100" height="90" rx="12" fill="#3C6382" stroke="var(--primary-color)" stroke-width="2" />
-              <!-- Symmetrical Dual Suction ears -->
-              <path d="M50,55 C30,55 30,95 50,95" fill="none" stroke="var(--primary-dark)" stroke-width="6" />
-              <path d="M150,55 C170,55 170,95 150,95" fill="none" stroke="var(--primary-dark)" stroke-width="6" />
-              <!-- Shaft -->
-              <line x1="10" y1="75" x2="190" y2="75" stroke="#00D2D3" stroke-width="4" />
-              <!-- Impeller in core -->
-              <circle cx="100" cy="75" r="24" fill="#0A3D62" />
-              <path d="M100,51 L100,99" stroke="#ffffff" stroke-width="2" />
-              <text x="100" y="140" font-family="'Outfit'" font-size="10" fill="var(--text-muted)" text-anchor="middle">DUAL-FLOW BALANCED CASING</text>
-            </svg>
-            <div class="product-badge">Volute</div>
-          </div>
-          <div class="product-info">
-            <h3 class="product-title">양흡입 벌류트 펌프</h3>
-            <p class="product-desc">샤프트를 중심으로 유체가 양쪽에서 동시에 대칭으로 유입되게 구성하여 축 추력(Axial Thrust)을 완전히 해소한 밸런스드 대형 펌프입니다. 배수장, 취수장 및 광역 상수원 취송수 등 대유량 수송에 최고의 안정성을 발휘합니다.</p>
-            <table class="product-spec-table">
-              <tbody>
-                <tr><th>최대 토출량</th><td>2,400 m³/h</td></tr>
-                <tr><th>최고 양정</th><td>140 m</td></tr>
-                <tr><th>구경 범위</th><td>150 mm ~ 500 mm</td></tr>
-                <tr><th>모터 전력</th><td>최대 450 kW</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Product 4: Submersible Sewage -->
+        <!-- Product 2: Submersible Pump -->
         <div class="product-card" data-category="special" id="prod-submersible">
           <div class="product-img-box">
             <!-- Technical SVG Drawing of Submersible Pump -->
-            <svg class="product-svg-diag" viewBox="0 0 200 150" aria-label="수중 오수/슬러지 펌프 기술 도면">
+            <svg class="product-svg-diag" viewBox="0 0 200 150" aria-label="수중펌프 기술 도면">
               <rect x="70" y="20" width="60" height="90" rx="10" fill="#2C3E50" stroke="var(--primary-color)" stroke-width="2" />
               <!-- Bottom Strainer suction grid -->
               <rect x="65" y="110" width="70" height="20" rx="3" fill="#7F8C8D" />
@@ -191,14 +124,82 @@
             <div class="product-badge">Special & Industrial</div>
           </div>
           <div class="product-info">
-            <h3 class="product-title">수중 오수 / 슬러지 펌프</h3>
-            <p class="product-desc">완전 방수 밀폐형 모터 구조를 취하여 수중에 완전히 침전시켜 작동하는 논클로그(Non-Clog) 형 펌프입니다. 케이싱 내 유입되는 섬유질이나 슬러지를 자동 컷팅/패스시키는 특화 임펠러가 내장되어 있어 하수 처리장, 우수 중계 가압장에 필수 배포됩니다.</p>
+            <h3 class="product-title">수중펌프</h3>
+            <p class="product-desc">완전 방수 밀폐형 모터 구조를 취하여 수중에 완전히 침전시켜 작동하는 고효율 수중 펌프입니다. 배출이 어려운 지하수, 배수구 및 다양한 수조 설비에 뛰어난 기밀성과 높은 신뢰성을 발휘합니다.</p>
             <table class="product-spec-table">
               <tbody>
                 <tr><th>최대 토출량</th><td>480 m³/h</td></tr>
                 <tr><th>최고 양정</th><td>45 m</td></tr>
                 <tr><th>구경 범위</th><td>50 mm ~ 200 mm</td></tr>
                 <tr><th>절연 등급</th><td>Class F (IP68 완전방수)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Product 3: Sludge Pump -->
+        <div class="product-card" data-category="special" id="prod-sludge">
+          <div class="product-img-box">
+            <!-- Technical SVG of Sludge pump -->
+            <svg class="product-svg-diag" viewBox="0 0 200 150" aria-label="슬러지 펌프 기술 도면">
+              <!-- Casing Body -->
+              <circle cx="100" cy="70" r="45" fill="#3C6382" stroke="var(--primary-color)" stroke-width="2" />
+              <!-- Heavy Discharge Outlet -->
+              <path d="M100,25 L100,5 L120,5 L120,27 Z" fill="#0A3D62" />
+              <!-- Thick Casing Bolts -->
+              <circle cx="70" cy="50" r="4" fill="var(--accent-color)" />
+              <circle cx="130" cy="50" r="4" fill="var(--accent-color)" />
+              <circle cx="70" cy="90" r="4" fill="var(--accent-color)" />
+              <circle cx="130" cy="90" r="4" fill="var(--accent-color)" />
+              <!-- Vortex Shaft and Hub -->
+              <circle cx="100" cy="70" r="15" fill="#00D2D3" />
+              <path d="M100,70 L140,70" stroke="#00D2D3" stroke-width="4" />
+              <text x="100" y="135" font-family="'Outfit'" font-size="10" fill="var(--text-muted)" text-anchor="middle">HEAVY DUTY VORTEX CASING</text>
+            </svg>
+            <div class="product-badge">Special & Industrial</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">슬러지펌프 <span class="spec-subtitle">(하수찌꺼기 펌프)</span></h3>
+            <p class="product-desc">하수 처리장 및 폐수 처리 공정에서 발생하는 고농도의 슬러지(하수찌꺼기) 및 미립자 혼합 유체를 막힘없이 완벽하게 이송하는 강력한 슬러지 전용 펌프입니다.</p>
+            <table class="product-spec-table">
+              <tbody>
+                <tr><th>최대 토출량</th><td>350 m³/h</td></tr>
+                <tr><th>최고 양정</th><td>50 m</td></tr>
+                <tr><th>구경 범위</th><td>80 mm ~ 250 mm</td></tr>
+                <tr><th>임펠러 타입</th><td>논클로그 / 볼텍스 타입</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Product 4: Mono Pump -->
+        <div class="product-card" data-category="special" id="prod-mono">
+          <div class="product-img-box">
+            <!-- Technical SVG of Mono Screw pump -->
+            <svg class="product-svg-diag" viewBox="0 0 200 150" aria-label="일축나사식 모노펌프 기술 도면">
+              <!-- Horizontal stator body -->
+              <rect x="30" y="55" width="120" height="40" rx="4" fill="#3C6382" stroke="var(--primary-color)" stroke-width="2" />
+              <!-- Suction housing -->
+              <rect x="150" y="45" width="30" height="60" rx="6" fill="#0A3D62" />
+              <!-- Spiral screw rotor in center -->
+              <path d="M35,75 Q50,60 65,75 T95,75 T125,75 T155,75" fill="none" stroke="#00D2D3" stroke-width="4" stroke-linecap="round" />
+              <!-- Suction Flange -->
+              <rect x="160" y="25" width="10" height="20" fill="var(--primary-light)" />
+              <!-- Discharge Flange -->
+              <rect x="20" y="65" width="10" height="20" fill="var(--primary-light)" />
+              <text x="100" y="125" font-family="'Outfit'" font-size="10" fill="var(--text-muted)" text-anchor="middle">PROGRESSIVE CAVITY SCREW SYSTEM</text>
+            </svg>
+            <div class="product-badge">Special & Industrial</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">일축나사식 모노펌프</h3>
+            <p class="product-desc">회전하는 금속제 로터와 탄성 스테이터의 밀폐된 챔버 공간을 통해 고점도 액체, 고형물 함유 액 등을 연속적이고 고르게 이송할 수 있는 일축나사식 용적형 펌프입니다.</p>
+            <table class="product-spec-table">
+              <tbody>
+                <tr><th>최대 토출량</th><td>최대 120 m³/h</td></tr>
+                <tr><th>최고 압력</th><td>24 bar</td></tr>
+                <tr><th>이송 가능 점도</th><td>최대 1,000,000 cPs</td></tr>
+                <tr><th>주요 재질</th><td>SUS304 / SUS316 로터, 고탄성 스테이터</td></tr>
               </tbody>
             </table>
           </div>
@@ -224,49 +225,45 @@
             <div class="product-badge">Special & Industrial</div>
           </div>
           <div class="product-info">
-            <h3 class="product-title">정밀 다이아프램 정량 펌프</h3>
-            <p class="product-desc">스트로크 제어 시스템을 이용해 시간당 약액이나 케미컬 주입량을 일정하게 토출하는 왕복동 정량 펌프입니다. 상하수도 약품 투입 설비, 화학 공장 정밀 공정 배출 등 고신뢰성의 약품 희석 시스템에 필수 배치됩니다.</p>
+            <h3 class="product-title">PAC 정량펌프 <span class="spec-subtitle">(다이어프램형)</span></h3>
+            <p class="product-desc">화학 공정, 수처리 약품 투입 시 소량의 액체(PAC 등)를 고도로 정확한 양으로 주입하기 위해 왕복 운동을 하는 정밀 왕복동식 다이어프램 정량 펌프입니다.</p>
             <table class="product-spec-table">
               <tbody>
                 <tr><th>최대 토출량</th><td>최대 1,800 L/h</td></tr>
                 <tr><th>최고 압력</th><td>20 bar</td></tr>
-                <tr><th>조절 정밀도</th><td>&plusmn; 1% 오차 이내</td></tr>
+                <tr><th>조절 정밀도</th><td>&plusmn; 1.0% 오차 이내</td></tr>
                 <tr><th>헤드 재질</th><td>Teflon, PVC, SUS316</td></tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- Product 6: Booster Pump -->
-        <div class="product-card" data-category="special" id="prod-booster">
+        <!-- Product 6: Volute Pump -->
+        <div class="product-card" data-category="volute" id="prod-volute">
           <div class="product-img-box">
-            <!-- Technical SVG of Booster Pump System -->
-            <svg class="product-svg-diag" viewBox="0 0 200 150" aria-label="지능형 부스터 펌프 시스템 기술 도면">
-              <!-- Common Baseplate -->
-              <rect x="20" y="115" width="160" height="15" rx="3" fill="#7F8C8D" />
-              <!-- Vertical Pumps 1 & 2 -->
-              <rect x="50" y="45" width="24" height="70" fill="#3C6382" />
-              <rect x="120" y="45" width="24" height="70" fill="#3C6382" />
-              <!-- Vertical motors on top -->
-              <rect x="47" y="25" width="30" height="20" rx="2" fill="var(--primary-color)" />
-              <rect x="117" y="25" width="30" height="20" rx="2" fill="var(--primary-color)" />
-              <!-- Header pipes -->
-              <line x1="15" y1="85" x2="185" y2="85" stroke="#00D2D3" stroke-width="5" />
-              <circle cx="62" cy="85" r="4" fill="#ffffff" />
-              <circle cx="132" cy="85" r="4" fill="#ffffff" />
-              <text x="100" y="145" font-family="'Outfit'" font-size="10" fill="var(--text-muted)" text-anchor="middle">PARALLEL VARIABLE INVERTER SYSTEM</text>
+            <!-- Dynamic Technical Vector Drawing of Single Stage Volute -->
+            <svg class="product-svg-diag" viewBox="0 0 200 150" aria-label="단단 편흡입 벌류트 펌프 기술 도면">
+              <!-- Scroll Casing outer outline -->
+              <path d="M100,20 A55,55 0 1,1 50,60 L20,60 L20,90 L60,90 A55,55 0 0,1 100,20 Z" fill="#3C6382" stroke="var(--primary-color)" stroke-width="2" />
+              <!-- Volute scroll contour -->
+              <circle cx="100" cy="75" r="35" fill="none" stroke="var(--primary-dark)" stroke-width="4" />
+              <path d="M100,75 L145,20 M145,20 L160,35" fill="none" stroke="var(--accent-color)" stroke-width="3" />
+              <!-- Impeller in center -->
+              <circle cx="100" cy="75" r="14" fill="#00D2D3" />
+              <line x1="100" y1="75" x2="190" y2="75" stroke="#2C3E50" stroke-width="4" />
+              <text x="100" y="130" font-family="'Outfit'" font-size="10" fill="var(--text-muted)" text-anchor="middle">VOLUTE SCROLL SECTION</text>
             </svg>
-            <div class="product-badge">Special & Industrial</div>
+            <div class="product-badge">Volute</div>
           </div>
           <div class="product-info">
-            <h3 class="product-title">지능형 부스터 펌프 시스템</h3>
-            <p class="product-desc">개별 유량 요구량 변화를 감지하여 2~4대의 버티컬 인버터 펌프를 병렬 무단 가속 연동 구동시키는 최고급 절전 가압 펌프 스테이션입니다. 대형 아파트 단지, 고지대 주택가 가압장 및 상업 빌딩 공영 급수용으로 최고 등급 인버터를 탑재했습니다.</p>
+            <h3 class="product-title">편흡입볼류트펌프 <span class="spec-subtitle">(처리수 펌프)</span></h3>
+            <p class="product-desc">유입축과 토출축이 90도 교차하며 단일 임펠러의 편흡입 회전 원심력으로 작동하는 고효율 처리수 펌프입니다. 구조가 단순하여 유지보수가 매우 편리하며 수처리장 처리수 이송 등에 널리 쓰입니다.</p>
             <table class="product-spec-table">
               <tbody>
-                <tr><th>인버터 제어</th><td>개별 인버터 제어 (PID 탑재)</td></tr>
-                <tr><th>최대 토출량</th><td>최대 300 m³/h (시스템 기준)</td></tr>
-                <tr><th>최고 압력</th><td>25 bar</td></tr>
-                <tr><th>보호 등급</th><td>과전류, 공회전 차단 등 풀센서 탑재</td></tr>
+                <tr><th>최대 토출량</th><td>600 m³/h</td></tr>
+                <tr><th>최고 양정</th><td>90 m</td></tr>
+                <tr><th>구경 범위</th><td>32 mm ~ 250 mm</td></tr>
+                <tr><th>주요 용도</th><td>수처리장 처리수 이송, 농업 용수, 공조 순환</td></tr>
               </tbody>
             </table>
           </div>
