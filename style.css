@@ -3523,3 +3523,28 @@ textarea.form-input {
   animation: dashFlow 2s linear infinite;
 }
 
+@media (max-width: 768px) {
+  .sim-top-split {
+    grid-template-columns: 1fr !important;
+  }
+  .sim-screen {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+.philosophy-promises-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 48px;
+}
+
+@media (max-width: 768px) {
+  .philosophy-promises-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}
+
