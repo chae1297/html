@@ -273,48 +273,69 @@
     </div>
   </section>
 
-  <!-- --- Product Estimate Simulation Section --- -->
-  <section class="section section-white" id="estimate-simulation-section">
+  <!-- --- Pump Operation Simulation Section --- -->
+  <section class="section section-white" id="pump-simulation-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-subtitle">ESTIMATE SIMULATOR</span>
-        <h2 class="section-title">실시간 견적 시뮬레이션</h2>
-        <p class="section-desc">원하시는 제품과 필요한 수량을 선택하시면 예상 총 견적을 즉시 시뮬레이션하실 수 있습니다.</p>
+        <span class="section-subtitle">INTERACTIVE SIMULATOR</span>
+        <h2 class="section-title">펌프 작동 원리 시뮬레이션</h2>
+        <p class="section-desc">비에이텍의 주요 6가지 펌프 설비 작동 원리와 유체 흐름을 인터랙티브 SVG 그래픽으로 확인해 보세요.</p>
       </div>
 
-      <div class="simulator-box" style="max-width: 600px; margin: 0 auto; background-color: var(--bg-color); padding: 40px; border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
-        <form id="calc-simulator-form" onsubmit="event.preventDefault();">
-          <div class="form-group" style="margin-bottom: 24px;">
-            <label for="sim-product" class="form-label" style="display: block; font-weight: 700; color: var(--primary-dark); margin-bottom: 8px;">제품 선택</label>
-            <select class="form-input" id="sim-product" style="width: 100%; padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color); font-size: 1rem; cursor: pointer; background-color: #ffffff; box-sizing: border-box;">
-              <option value="5500000">부스터펌프 (단가: 5,500,000원)</option>
-              <option value="2800000">수중펌프 (단가: 2,800,000원)</option>
-              <option value="3200000">슬러지펌프 (단가: 3,200,000원)</option>
-              <option value="4500000">일축나사식 모노펌프 (단가: 4,500,000원)</option>
-              <option value="1200000">PAC 정량펌프 (단가: 1,200,000원)</option>
-              <option value="1800000">편흡입볼류트펌프 (단가: 1,800,000원)</option>
-            </select>
-          </div>
+      <div class="sim-container" style="display: grid; grid-template-columns: 280px 1fr; gap: 40px; align-items: start;">
+        
+        <!-- Left Side: Pump Type Tabs -->
+        <div class="sim-tabs" style="display: flex; flex-direction: column; gap: 12px;">
+          <button class="sim-tab-btn active" data-sim="booster" style="text-align: left; padding: 18px 24px; font-size: 1.05rem; font-weight: 700; border-radius: var(--radius-md); border: 1px solid var(--border-color); cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: space-between;">
+            <span>부스터펌프 <span style="font-size: 0.85rem; font-weight: 500; opacity: 0.7; display: block; margin-top: 4px;">상수도 가압 시스템</span></span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <button class="sim-tab-btn" data-sim="submersible" style="text-align: left; padding: 18px 24px; font-size: 1.05rem; font-weight: 700; border-radius: var(--radius-md); border: 1px solid var(--border-color); cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: space-between;">
+            <span>수중펌프 <span style="font-size: 0.85rem; font-weight: 500; opacity: 0.7; display: block; margin-top: 4px;">지하수 및 수조 배수</span></span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <button class="sim-tab-btn" data-sim="sludge" style="text-align: left; padding: 18px 24px; font-size: 1.05rem; font-weight: 700; border-radius: var(--radius-md); border: 1px solid var(--border-color); cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: space-between;">
+            <span>슬러지펌프 <span style="font-size: 0.85rem; font-weight: 500; opacity: 0.7; display: block; margin-top: 4px;">하수찌꺼기 이송</span></span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <button class="sim-tab-btn" data-sim="mono" style="text-align: left; padding: 18px 24px; font-size: 1.05rem; font-weight: 700; border-radius: var(--radius-md); border: 1px solid var(--border-color); cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: space-between;">
+            <span>일축나사식 모노펌프 <span style="font-size: 0.85rem; font-weight: 500; opacity: 0.7; display: block; margin-top: 4px;">고점도 및 정용량 이송</span></span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <button class="sim-tab-btn" data-sim="dosing" style="text-align: left; padding: 18px 24px; font-size: 1.05rem; font-weight: 700; border-radius: var(--radius-md); border: 1px solid var(--border-color); cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: space-between;">
+            <span>PAC 정량펌프 <span style="font-size: 0.85rem; font-weight: 500; opacity: 0.7; display: block; margin-top: 4px;">다이어프램 정밀 약품 주입</span></span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <button class="sim-tab-btn" data-sim="volute" style="text-align: left; padding: 18px 24px; font-size: 1.05rem; font-weight: 700; border-radius: var(--radius-md); border: 1px solid var(--border-color); cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: space-between;">
+            <span>편흡입볼류트펌프 <span style="font-size: 0.85rem; font-weight: 500; opacity: 0.7; display: block; margin-top: 4px;">처리수 원심 이송</span></span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
 
-          <div class="form-group" style="margin-bottom: 28px;">
-            <label for="sim-quantity" class="form-label" style="display: block; font-weight: 700; color: var(--primary-dark); margin-bottom: 8px;">수량 입력 (대)</label>
-            <input type="number" class="form-input" id="sim-quantity" min="0" placeholder="수량을 입력하세요 (예: 5)" style="width: 100%; padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color); font-size: 1rem; box-sizing: border-box; background-color: #ffffff;">
-          </div>
-
-          <div class="simulator-result" style="background-color: var(--primary-dark); color: #ffffff; padding: 24px; border-radius: var(--radius-md); text-align: center; margin-bottom: 28px;">
-            <div style="font-size: 0.95rem; opacity: 0.8; margin-bottom: 8px; font-weight: 500;">예상 견적 (부가가치세 별도)</div>
-            <div style="font-size: 2rem; font-weight: 800; color: #FEE500; font-family: 'Outfit', sans-serif;">
-              <span id="sim-result-value">0</span><span style="font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-left: 4px;">원</span>
+        <!-- Right Side: Graphic Screen and Text Explanation -->
+        <div class="sim-display" style="background-color: var(--bg-color); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); display: flex; flex-direction: column;">
+          
+          <!-- Screen Display Area -->
+          <div class="sim-screen" style="height: 380px; background-color: var(--primary-dark); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 20px;">
+            <!-- SVGs will be injected here via JavaScript -->
+            <div id="sim-svg-container" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
             </div>
           </div>
 
-          <a href="support.html#inquiry-form-section" class="btn btn-primary" style="width: 100%; padding: 16px; font-weight: 700; justify-content: center; box-sizing: border-box; text-decoration: none; display: flex;">
-            상담 신청하기
-          </a>
-        </form>
+          <!-- Description Text Panel -->
+          <div class="sim-description" style="padding: 32px; background-color: var(--bg-white); border-top: 1px solid var(--border-color);">
+            <h3 id="sim-title" style="font-size: 1.5rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 12px;"></h3>
+            <p id="sim-desc" style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;"></p>
+            <div id="sim-features" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; border-top: 1px solid var(--border-color); padding-top: 20px;">
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </div>
   </section>
+
 
   <!-- --- Product Operation & Maintenance Guide --- -->
   <section class="section section-light" id="product-guide-section">

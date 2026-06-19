@@ -424,27 +424,224 @@ document.addEventListener('DOMContentLoaded', () => {
   `;
   document.body.appendChild(kakaoFloatBtn);
 
-  // --- Product Estimate Simulator Logic ---
-  const simProduct = document.getElementById('sim-product');
-  const simQuantity = document.getElementById('sim-quantity');
-  const simResultValue = document.getElementById('sim-result-value');
+  // --- Pump Operation Simulation Logic ---
+  const simTabButtons = document.querySelectorAll('.sim-tab-btn');
+  const simSvgContainer = document.getElementById('sim-svg-container');
+  const simTitle = document.getElementById('sim-title');
+  const simDesc = document.getElementById('sim-desc');
+  const simFeatures = document.getElementById('sim-features');
 
-  if (simProduct && simQuantity && simResultValue) {
-    const calculateEstimate = () => {
-      const unitPrice = parseFloat(simProduct.value) || 0;
-      const quantity = parseInt(simQuantity.value, 10) || 0;
-      
-      if (quantity <= 0 || isNaN(quantity)) {
-        simResultValue.textContent = '0';
-        return;
+  const simData = {
+    booster: {
+      title: '부스터펌프 (상수도 가압 시스템)',
+      desc: '압력 탱크 내부의 공기 압력과 물의 유입/유출을 보여주는 흐름도입니다. 다수의 버티컬 인버터 펌프가 압력 변화를 실시간으로 감지하여 설정된 상수도 공급 압력을 일정하게 조절합니다.',
+      features: [
+        '<strong>가변 압력 제어:</strong> 실시간 공기 압축 조절',
+        '<strong>안정성 극대화:</strong> 수충격(워터 해머) 완화 구조',
+        '<strong>에너지 절감:</strong> 유량 감지형 가변 모터 스피드',
+        '<strong>공회전 방지:</strong> 수위 연계형 자동차단 보호'
+      ],
+      svg: `<svg viewBox="0 0 400 300" width="100%" height="100%">
+        <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
+          <line x1="0" y1="50" x2="400" y2="50" /><line x1="0" y1="100" x2="400" y2="100" />
+          <line x1="0" y1="150" x2="400" y2="150" /><line x1="0" y1="200" x2="400" y2="200" />
+          <line x1="0" y1="250" x2="400" y2="250" /><line x1="80" y1="0" x2="80" y2="300" />
+          <line x1="160" y1="0" x2="160" y2="300" /><line x1="240" y1="0" x2="240" y2="300" />
+          <line x1="320" y1="0" x2="320" y2="300" />
+        </g>
+        <path d="M 30 180 L 150 180 L 150 240 M 250 240 L 250 180 L 370 180" fill="none" stroke="#2c3e50" stroke-width="16" stroke-linecap="round" />
+        <path d="M 30 180 L 150 180 L 150 240 M 250 240 L 250 180 L 370 180" fill="none" stroke="#3498db" stroke-width="10" stroke-linecap="round" />
+        <path d="M 30 180 L 150 180 L 150 240" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="8 6" class="flow-anim-in" />
+        <path d="M 250 240 L 250 180 L 370 180" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="8 6" class="flow-anim-out" />
+        <rect x="180" y="220" width="40" height="30" rx="3" fill="#7f8c8d" />
+        <circle cx="200" cy="235" r="12" fill="#00d2d3" />
+        <line x1="200" y1="235" x2="200" y2="210" stroke="#7f8c8d" stroke-width="4" />
+        <rect x="160" y="50" width="80" height="120" rx="40" fill="#34495e" stroke="#2c3e50" stroke-width="4" />
+        <path d="M 162 90 Q 200 120 238 90 L 238 90 A 38 38 0 0 0 162 90 Z" fill="#e74c3c" opacity="0.85" class="bladder-anim" />
+        <text x="200" y="75" font-family="Outfit" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">AIR</text>
+        <path d="M 162 90 Q 200 120 238 90 L 238 168 A 38 38 0 0 1 162 168 Z" fill="#3498db" opacity="0.75" class="tank-water-anim" />
+        <text x="200" y="145" font-family="Outfit" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">WATER</text>
+        <text x="70" y="160" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">INLET</text>
+        <text x="330" y="160" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">OUTLET</text>
+        <text x="200" y="30" fill="#FEE500" font-size="12" font-weight="700" text-anchor="middle">DIAPHRAGM PRESSURE TANK</text>
+      </svg>`
+    },
+    submersible: {
+      title: '수중펌프 (지하수 및 수조 배수)',
+      desc: '모터와 임펠러가 물속에 잠긴 상태에서 회전하며, 원심력으로 흡입된 물을 양정관(수직 배출관)을 통해 위로 밀어 올리는 단면 구조도입니다. 완전 방수 전동기와 누수 감지 센서가 내장되어 안전한 배수를 지원합니다.',
+      features: [
+        '<strong>완전 잠김 운전:</strong> 공간 절약 및 무소음 작동',
+        '<strong>이중 기밀 씰:</strong> 모터 내부로의 수분 유입 차단',
+        '<strong>간편 설치 탈착:</strong> 수중 가이드 파이프 자동 연결',
+        '<strong>전동기 보호:</strong> 과열 차단(TP) 및 누수 경보 탑재'
+      ],
+      svg: `<svg viewBox="0 0 400 300" width="100%" height="100%">
+        <rect x="0" y="100" width="400" height="200" fill="#3498db" opacity="0.15" />
+        <line x1="0" y1="100" x2="400" y2="100" stroke="#3498db" stroke-width="2" stroke-dasharray="10 5" />
+        <rect x="160" y="110" width="80" height="130" rx="10" fill="#2c3e50" stroke="#34495e" stroke-width="3" />
+        <line x1="170" y1="130" x2="230" y2="130" stroke="#34495e" stroke-width="2" />
+        <line x1="170" y1="150" x2="230" y2="150" stroke="#34495e" stroke-width="2" />
+        <line x1="170" y1="170" x2="230" y2="170" stroke="#34495e" stroke-width="2" />
+        <rect x="150" y="210" width="100" height="30" rx="4" fill="#16a085" />
+        <rect x="165" y="240" width="70" height="15" fill="#7f8c8d" />
+        <line x1="175" y1="240" x2="175" y2="255" stroke="#2c3e50" stroke-width="2" />
+        <line x1="185" y1="240" x2="185" y2="255" stroke="#2c3e50" stroke-width="2" />
+        <line x1="195" y1="240" x2="195" y2="255" stroke="#2c3e50" stroke-width="2" />
+        <line x1="205" y1="240" x2="205" y2="255" stroke="#2c3e50" stroke-width="2" />
+        <line x1="215" y1="240" x2="215" y2="255" stroke="#2c3e50" stroke-width="2" />
+        <line x1="225" y1="240" x2="225" y2="255" stroke="#2c3e50" stroke-width="2" />
+        <path d="M 230 220 L 300 220 L 300 30" fill="none" stroke="#2c3e50" stroke-width="12" />
+        <path d="M 230 220 L 300 220 L 300 30" fill="none" stroke="#3498db" stroke-width="6" />
+        <path d="M 230 220 L 300 220 L 300 30" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="6 6" class="sub-flow-anim" />
+        <g transform="translate(200, 225)">
+          <circle cx="0" cy="0" r="10" fill="#00d2d3" />
+          <path d="M -8 -2 L 8 2" stroke="#ffffff" stroke-width="2" class="spin-anim" />
+          <path d="M -2 8 L 2 -8" stroke="#ffffff" stroke-width="2" class="spin-anim" />
+        </g>
+        <path d="M 180 270 Q 185 255 185 245 M 200 275 Q 200 255 200 245 M 220 270 Q 215 255 215 245" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4 4" class="suction-particles" />
+        <text x="300" y="20" fill="#FEE500" font-size="10" font-weight="700" text-anchor="middle">DISCHARGE</text>
+        <text x="200" y="90" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">WATER LINE</text>
+      </svg>`
+    },
+    sludge: {
+      title: '슬러지펌프 (하수찌꺼기 이송)',
+      desc: '협잡물이 포함되거나 점도가 높은 슬러지 유체를 막힘없이 통과시키기 위해 설계된 특수 비폐쇄형(Non-clog) 및 와류형 임펠러의 단면 구조입니다. 임펠러 내부 통로가 매우 넓어 고형물 통과 성능이 매우 우수합니다.',
+      features: [
+        '<strong>비폐쇄 통로:</strong> 막힘과 엉킴을 근본적으로 방지',
+        '<strong>경화 재질 구조:</strong> 마모성 입자 및 모래에 극강의 강도',
+        '<strong>간편 세척 탈착:</strong> 유지관리가 매우 수월한 해체 설계',
+        '<strong>더블 메카니컬 씰:</strong> 누수 감지 전극센서 포함'
+      ],
+      svg: `<svg viewBox="0 0 400 300" width="100%" height="100%">
+        <path d="M 200 50 C 300 50 350 120 350 180 C 350 250 280 280 200 280 C 120 280 80 220 80 180 C 80 140 100 110 130 110 M 130 110 L 130 50 M 200 50 L 200 30" fill="none" stroke="#2c3e50" stroke-width="12" />
+        <path d="M 200 50 C 300 50 350 120 350 180 C 350 250 280 280 200 280 C 120 280 80 220 80 180 C 80 140 100 110 130 110" fill="#34495e" opacity="0.3" />
+        <path d="M 130 110 L 130 30 L 90 30" fill="none" stroke="#2c3e50" stroke-width="24" stroke-linecap="square" />
+        <path d="M 130 110 L 130 30 L 90 30" fill="none" stroke="#8e44ad" stroke-width="18" stroke-linecap="square" />
+        <g transform="translate(210, 180)" class="spin-anim">
+          <circle cx="0" cy="0" r="25" fill="#16a085" />
+          <path d="M 0 0 C 15 15 35 10 40 0" fill="none" stroke="#2c3e50" stroke-width="8" stroke-linecap="round" />
+          <path d="M 0 0 C -15 -15 -35 -10 -40 0" fill="none" stroke="#2c3e50" stroke-width="8" stroke-linecap="round" />
+          <path d="M 0 0 C -15 15 -10 35 0 40" fill="none" stroke="#2c3e50" stroke-width="8" stroke-linecap="round" />
+          <path d="M 0 0 C 15 -15 10 -35 0 -40" fill="none" stroke="#2c3e50" stroke-width="8" stroke-linecap="round" />
+        </g>
+        <circle cx="210" cy="180" r="8" fill="#d35400" stroke="#ba4a00" stroke-width="2" class="sludge-ball-1" />
+        <circle cx="210" cy="180" r="10" fill="#a04000" stroke="#7e5109" stroke-width="2" class="sludge-ball-2" />
+        <circle cx="210" cy="180" r="7" fill="#d35400" stroke="#ba4a00" stroke-width="2" class="sludge-ball-3" />
+        <text x="210" y="115" fill="#FEE500" font-size="11" font-weight="700" text-anchor="middle">VORTEX BLADES (NON-CLOG)</text>
+        <text x="70" y="25" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">SLUDGE DISCHARGE</text>
+      </svg>`
+    },
+    mono: {
+      title: '일축나사식 모노펌프 (고점도 및 정용량 이송)',
+      desc: '금속제 나선형 로터가 고무제 스테이터 내의 정밀하게 계산된 공동 공간에서 편심 회전하면서 유체를 입구에서 출구 방향으로 밀어 올리는 원리입니다. 고점도 슬러지, 탈수 케이크 및 고액 혼합 유체의 일정량 연속 정량 이송에 독보적인 성능을 발휘합니다.',
+      features: [
+        '<strong>일정한 토출량:</strong> 맥동 없이 일정한 유량 연속 공급',
+        '<strong>고점도 액체 특화:</strong> 점도 변화와 관계없이 강력한 추진력',
+        '<strong>가역 회전 구조:</strong> 정방향 및 역방향 역전 운전 가능',
+        '<strong>고밀폐 스테이터:</strong> 유입 액체의 역류 및 유출 원천 차단'
+      ],
+      svg: `<svg viewBox="0 0 400 300" width="100%" height="100%">
+        <rect x="50" y="100" width="300" height="100" rx="10" fill="#2c3e50" stroke="#34495e" stroke-width="3" />
+        <path d="M 50 150 C 80 120, 110 180, 140 150 C 170 120, 200 180, 230 150 C 260 120, 290 180, 320 150 M 50 150 C 80 180, 110 120, 140 150 C 170 180, 200 120, 230 150 C 260 180, 290 120, 320 150" fill="none" stroke="#7f8c8d" stroke-width="24" stroke-linecap="round" />
+        <path d="M 40 150 Q 80 110 120 150 T 200 150 T 280 150 T 360 150" fill="none" stroke="#00d2d3" stroke-width="12" stroke-linecap="round" class="rotor-wobble" />
+        <ellipse cx="90" cy="150" rx="20" ry="12" fill="#3498db" opacity="0.6" class="cavity-fluid" />
+        <ellipse cx="170" cy="150" rx="20" ry="12" fill="#3498db" opacity="0.6" class="cavity-fluid" />
+        <ellipse cx="250" cy="150" rx="20" ry="12" fill="#3498db" opacity="0.6" class="cavity-fluid" />
+        <path d="M 320 150 L 370 150" fill="none" stroke="#2980b9" stroke-width="14" stroke-linecap="round" />
+        <path d="M 30 150 L 50 150" fill="none" stroke="#2980b9" stroke-width="14" stroke-linecap="round" />
+        <text x="350" y="125" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">INLET</text>
+        <text x="45" y="125" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">OUTLET</text>
+        <text x="200" y="80" fill="#FEE500" font-size="12" font-weight="700" text-anchor="middle">ROTATING HELICAL ROTOR IN STATOR</text>
+      </svg>`
+    },
+    dosing: {
+      title: 'PAC 정량펌프 (다이어프램형)',
+      desc: '모터 구동 캠축에 연결된 다이어프램(불침투성 수지 판막)이 왕복 신축 운동을 함으로써 펌프 헤드 내부에 주기적인 감압/가압 상태를 생성합니다. 흡입측과 토출측에 내장된 볼 체크 밸브(Check Valve)가 정밀 연동하여 약품을 역류 없이 정확한 주량만큼 밀어냅니다.',
+      features: [
+        '<strong>초정밀 토출:</strong> 정격 주입량의 오차 범위 1% 이내 제어',
+        '<strong>내화학 플라스틱:</strong> PAC, 염소, 산성 약품에 강한 저항성',
+        '<strong>스트로크 조절:</strong> 다이얼 조절로 미세 주입량 상시 세팅',
+        '<strong>기밀 다이어프램:</strong> 기계 구동부와 유체를 완전히 격리'
+      ],
+      svg: `<svg viewBox="0 0 400 300" width="100%" height="100%">
+        <path d="M 120 100 L 220 100 L 220 200 L 120 200 Z" fill="#34495e" stroke="#2c3e50" stroke-width="4" />
+        <path d="M 140 105 L 140 195" fill="none" stroke="#e74c3c" stroke-width="6" stroke-linecap="round" class="diaphragm-flex" />
+        <path d="M 170 200 L 170 260" fill="none" stroke="#2c3e50" stroke-width="12" />
+        <path d="M 170 200 L 170 260" fill="none" stroke="#3498db" stroke-width="6" />
+        <circle cx="170" cy="225" r="8" fill="#7f8c8d" stroke="#2c3e50" stroke-width="2" class="valve-suction" />
+        <path d="M 170 100 L 170 40" fill="none" stroke="#2c3e50" stroke-width="12" />
+        <path d="M 170 100 L 170 40" fill="none" stroke="#3498db" stroke-width="6" />
+        <circle cx="170" cy="75" r="8" fill="#7f8c8d" stroke="#2c3e50" stroke-width="2" class="valve-discharge" />
+        <circle cx="170" cy="25" r="4" fill="#FEE500" class="dosing-drop-1" />
+        <circle cx="170" cy="25" r="4" fill="#FEE500" class="dosing-drop-2" />
+        <text x="200" y="155" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">CHAMBER</text>
+        <text x="95" y="155" fill="#e74c3c" font-size="10" font-weight="700" text-anchor="middle">DIAPHRAGM</text>
+        <text x="240" y="245" fill="#3498db" font-size="10" font-weight="700">SUCTION VALVE</text>
+        <text x="240" y="65" fill="#3498db" font-size="10" font-weight="700">DISCHARGE VALVE</text>
+      </svg>`
+    },
+    volute: {
+      title: '편흡입볼류트펌프 (원심 처리수 이송)',
+      desc: '가운데 흡입구(Eye)로 흡입된 처리수 유체가 고속 회전하는 임펠러의 날개 깃을 타며 가속을 얻고, 점진적으로 단면적이 넓어지는 나선형 와류실(Volute) 케이싱을 지나면서 속도 에너지가 고압의 정적 압력 에너지로 변환되어 상단 토출구로 분사되는 원심 펌프입니다.',
+      features: [
+        '<strong>원심력 가압:</strong> 유체 속도를 효과적인 수압으로 변환',
+        '<strong>부드러운 나선 케이싱:</strong> 유동 마찰 저항을 극소화하여 고효율화',
+        '<strong>견고한 패킹 설계:</strong> 글랜드 패킹 및 메카니컬 씰 옵션 제공',
+        '<strong>편리한 백풀아웃:</strong> 배관 해체 없이 회전체 축부 분해 정비'
+      ],
+      svg: `<svg viewBox="0 0 400 300" width="100%" height="100%">
+        <path d="M 200 60 C 280 60, 320 110, 320 180 C 320 240, 260 270, 200 270 C 140 270, 100 220, 100 180 C 100 140, 120 110, 150 110 M 150 110 L 150 50 L 190 50 M 200 60 L 200 30" fill="none" stroke="#2c3e50" stroke-width="12" />
+        <path d="M 200 60 C 280 60, 320 110, 320 180 C 320 240, 260 270, 200 270 C 140 270, 100 220, 100 180 C 100 140, 120 110, 150 110" fill="#34495e" opacity="0.3" />
+        <circle cx="200" cy="180" r="30" fill="#2c3e50" stroke="#34495e" stroke-width="4" />
+        <text x="200" y="184" fill="#ffffff" font-size="10" font-weight="700" text-anchor="middle">SUCTION</text>
+        <g transform="translate(200, 180)" class="spin-anim">
+          <path d="M 0 0 Q 15 -15 30 -5" fill="none" stroke="#00d2d3" stroke-width="4" />
+          <path d="M 0 0 Q -15 15 -30 5" fill="none" stroke="#00d2d3" stroke-width="4" />
+          <path d="M 0 0 Q 15 15 5 30" fill="none" stroke="#00d2d3" stroke-width="4" />
+          <path d="M 0 0 Q -15 -15 -5 -30" fill="none" stroke="#00d2d3" stroke-width="4" />
+        </g>
+        <path d="M 200 180 Q 240 180 250 200 T 170 240 T 130 180 T 200 100 T 270 120 L 270 30" fill="none" stroke="#3498db" stroke-width="3" stroke-dasharray="10 8" class="volute-flow-anim" />
+        <text x="270" y="20" fill="#FEE500" font-size="10" font-weight="700" text-anchor="middle">DISCHARGE</text>
+        <text x="200" y="285" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">VOLUTE CASING</text>
+      </svg>`
+    }
+  };
+
+  function switchPumpSim(pumpId) {
+    const data = simData[pumpId];
+    if (!data) return;
+
+    simTabButtons.forEach(btn => {
+      if (btn.getAttribute('data-sim') === pumpId) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
       }
-      
-      const totalPrice = unitPrice * quantity;
-      // Formatter for 3-digit comma
-      simResultValue.textContent = totalPrice.toLocaleString('ko-KR');
-    };
+    });
 
-    simProduct.addEventListener('change', calculateEstimate);
-    simQuantity.addEventListener('input', calculateEstimate);
+    if (simSvgContainer) simSvgContainer.innerHTML = data.svg;
+    if (simTitle) simTitle.textContent = data.title;
+    if (simDesc) simDesc.textContent = data.desc;
+
+    if (simFeatures) {
+      simFeatures.innerHTML = data.features.map(feat => `
+        <div style="display: flex; align-items: start; gap: 8px; font-size: 0.95rem; color: var(--text-main);">
+          <span style="color: var(--accent-color); font-weight: 700;">✓</span>
+          <span>${feat}</span>
+        </div>
+      `).join('');
+    }
+  }
+
+  if (simTabButtons.length > 0) {
+    simTabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const pumpId = btn.getAttribute('data-sim');
+        switchPumpSim(pumpId);
+      });
+    });
+
+    // Load default
+    switchPumpSim('booster');
   }
 });
