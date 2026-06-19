@@ -3169,3 +3169,152 @@ textarea.form-input {
     text-align: left;
   }
 }
+
+/* --- KakaoTalk Consultation Elements --- */
+
+/* Base KakaoTalk Button */
+.btn-kakaotalk {
+  background-color: #FEE500;
+  color: #000000 !important;
+  font-weight: 700;
+  border-radius: var(--radius-md, 8px);
+  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(254, 229, 0, 0.2);
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-kakaotalk:hover {
+  background-color: #FADA0A;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(254, 229, 0, 0.4);
+}
+
+.btn-kakaotalk:active {
+  transform: translateY(0);
+}
+
+.btn-kakaotalk svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Floating KakaoTalk Button */
+.floating-kakao {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  width: 60px;
+  height: 60px;
+  background-color: #FEE500;
+  color: #000000 !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.25s ease, box-shadow 0.3s ease;
+  animation: floatPulse 3s infinite ease-in-out;
+}
+
+.floating-kakao:hover {
+  background-color: #FADA0A;
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.floating-kakao svg {
+  width: 28px;
+  height: 28px;
+}
+
+@keyframes floatPulse {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* FAQ Callout CTA */
+.faq-cta {
+  margin-top: 56px;
+  text-align: center;
+  background-color: var(--bg-white);
+  padding: 48px 32px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-cta:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+
+.faq-cta h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+}
+
+.faq-cta p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 28px;
+}
+
+.faq-cta .btn-kakaotalk {
+  padding: 14px 32px;
+  font-size: 1.05rem;
+}
+
+/* Adjustments for mobile responsive */
+@media (max-width: 768px) {
+  .floating-kakao {
+    right: 20px;
+    bottom: 20px;
+    width: 52px;
+    height: 52px;
+  }
+  
+  .floating-kakao svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .faq-cta {
+    padding: 36px 20px;
+    margin-top: 40px;
+  }
+  
+  .faq-cta h3 {
+    font-size: 1.35rem;
+  }
+  
+  .faq-cta p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+}
+

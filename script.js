@@ -388,4 +388,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // --- Site-wide Floating KakaoTalk Consultation Button ---
+  const kakaoFloatBtn = document.createElement('a');
+  kakaoFloatBtn.href = 'http://pf.kakao.com/_AeHXX/chat';
+  kakaoFloatBtn.target = '_blank';
+  kakaoFloatBtn.rel = 'noopener noreferrer';
+  kakaoFloatBtn.className = 'floating-kakao';
+  kakaoFloatBtn.setAttribute('aria-label', '카카오톡 상담하기');
+  kakaoFloatBtn.innerHTML = `
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12,2C6.5,2,2,5.6,2,10c0,2.8,1.8,5.3,4.5,6.6l-1,3.7c-0.1,0.5,0.4,0.9,0.9,0.7l4.3-2.6c0.4,0.1,0.8,0.1,1.3,0.1c5.5,0,10-3.6,10-8S17.5,2,12,2z"/>
+    </svg>
+  `;
+  document.body.appendChild(kakaoFloatBtn);
 });
