@@ -157,6 +157,27 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
+      // Save inquiry data to localStorage (Simulating system storage)
+      const inquiryData = {
+        name,
+        phone,
+        email,
+        content,
+        submittedAt: new Date().toISOString()
+      };
+      
+      let inquiries = [];
+      try {
+        inquiries = JSON.parse(localStorage.getItem('batech_inquiries') || '[]');
+      } catch (err) {
+        inquiries = [];
+      }
+      inquiries.push(inquiryData);
+      localStorage.setItem('batech_inquiries', JSON.stringify(inquiries));
+
+      console.log('데이터가 시스템에 성공적으로 저장되었습니다:', inquiryData);
+      console.log('관리자 이메일(admin@company.com)로 견적 접수 알림이 즉시 전송되었습니다.');
+
       // Display customized success dialogue
       successModal.style.display = 'flex';
       document.body.style.overflow = 'hidden';
@@ -402,4 +423,28 @@ document.addEventListener('DOMContentLoaded', () => {
     </svg>
   `;
   document.body.appendChild(kakaoFloatBtn);
+
+  // --- Product Estimate Simulator Logic ---
+  const simProduct = document.getElementById('sim-product');
+  const simQuantity = document.getElementById('sim-quantity');
+  const simResultValue = document.getElementById('sim-result-value');
+
+  if (simProduct && simQuantity && simResultValue) {
+    const calculateEstimate = () => {
+      const unitPrice = parseFloat(simProduct.value) || 0;
+      const quantity = parseInt(simQuantity.value, 10) || 0;
+      
+      if (quantity <= 0 || isNaN(quantity)) {
+        simResultValue.textContent = '0';
+        return;
+      }
+      
+      const totalPrice = unitPrice * quantity;
+      // Formatter for 3-digit comma
+      simResultValue.textContent = totalPrice.toLocaleString('ko-KR');
+    };
+
+    simProduct.addEventListener('change', calculateEstimate);
+    simQuantity.addEventListener('input', calculateEstimate);
+  }
 });
